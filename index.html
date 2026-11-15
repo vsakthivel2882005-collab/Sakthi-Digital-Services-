@@ -1,659 +1,148 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#090909">
-<title>Sakthi Digital Services | Premium Digital Solutions</title>
-
+<title>Sakthivel V. | Sakthi Digital Services</title>
 <style>
-:root{
-  --gold:#d7b56d;
-  --gold2:#f4dfaa;
-  --bg:#090909;
-  --panel:#151515;
-  --muted:#b9b3a6;
-}
-
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  margin:0;
-  background:var(--bg);
-  color:#f8f5ed;
-  font-family:Arial,Helvetica,sans-serif;
-  line-height:1.6;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-.wrap{
-  width:min(1100px,92%);
-  margin:auto;
-}
-
-/* HEADER */
-
-header{
-  position:sticky;
-  top:0;
-  background:#090909ed;
-  border-bottom:1px solid #6f592d;
-  z-index:5;
-  backdrop-filter:blur(10px);
-}
-
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:16px 0;
-  gap:15px;
-}
-
-.brand{
-  font-weight:800;
-  letter-spacing:1px;
-  color:var(--gold2);
-}
-
-.brand span{
-  display:block;
-  font-size:10px;
-  letter-spacing:3px;
-  color:#aaa;
-}
-
-nav .links{
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
-  font-size:13px;
-  color:#ddd;
-}
-
-nav .links a:hover{
-  color:var(--gold2);
-}
-
-/* HERO */
-
-.hero{
-  padding:90px 0 75px;
-  text-align:center;
-  background:radial-gradient(
-    ellipse at top,
-    #352817 0%,
-    #15110b 35%,
-    #090909 75%
-  );
-}
-
-.eyebrow{
-  color:var(--gold);
-  letter-spacing:4px;
-  text-transform:uppercase;
-  font-size:12px;
-}
-
-.hero h1{
-  font-size:clamp(38px,7vw,70px);
-  line-height:1.08;
-  margin:18px auto;
-  max-width:850px;
-}
-
-.gold{
-  color:var(--gold2);
-}
-
-.hero p{
-  color:#c9c1b2;
-  max-width:650px;
-  margin:0 auto 28px;
-}
-
-/* BUTTONS */
-
-.btn{
-  display:inline-block;
-  padding:13px 22px;
-  border-radius:4px;
-  background:linear-gradient(135deg,#f1d99b,#b78b3f);
-  color:#16110a;
-  font-weight:800;
-  margin:6px;
-  transition:.3s;
-}
-
-.btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 5px 20px #d7b56d40;
-}
-
-.btn.outline{
-  background:transparent;
-  border:1px solid var(--gold);
-  color:var(--gold2);
-}
-
-/* SECTIONS */
-
-section{
-  padding:62px 0;
-}
-
-.section-title{
-  text-align:center;
-  margin:0 0 30px;
-  font-size:30px;
-}
-
-.section-title span{
-  color:var(--gold2);
-}
-
-/* CARDS */
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:17px;
-}
-
-.card{
-  background:linear-gradient(145deg,#191919,#101010);
-  border:1px solid #493b22;
-  border-radius:10px;
-  padding:23px;
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  border-color:var(--gold);
-}
-
-.card h3{
-  color:var(--gold2);
-  margin:4px 0 8px;
-}
-
-.price{
-  font-size:22px;
-  color:var(--gold);
-  font-weight:800;
-}
-
-.muted{
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* DEMO */
-
-.demo{
-  min-height:155px;
-  border:1px dashed #80683a;
-  border-radius:8px;
-  padding:18px;
-  background:#100e0a;
-}
-
-.tag{
-  display:inline-block;
-  border:1px solid #80683a;
-  color:var(--gold2);
-  font-size:10px;
-  letter-spacing:1px;
-  padding:3px 8px;
-  border-radius:20px;
-}
-
-/* PROJECTS */
-
-.project-card{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-}
-
-.project-card .btn{
-  margin:12px 0 0;
-}
-
-.project-card p{
-  flex-grow:1;
-}
-
-/* PROCESS */
-
-.steps{
-  counter-reset:step;
-}
-
-.step{
-  padding:18px;
-  border-left:2px solid var(--gold);
-  background:#141414;
-  margin:12px 0;
-  border-radius:0 8px 8px 0;
-}
-
-.step b{
-  color:var(--gold2);
-}
-
-/* CONTACT */
-
-.contact{
-  text-align:center;
-  background:linear-gradient(180deg,#090909,#1b160d);
-  border-top:1px solid #554321;
-}
-
-.contact-card{
-  max-width:680px;
-  margin:auto;
-  background:#15130f;
-  border:1px solid #6d552b;
-  padding:28px;
-  border-radius:12px;
-}
-
-/* FOOTER */
-
-footer{
-  text-align:center;
-  padding:24px;
-  color:#8f887b;
-  border-top:1px solid #29231a;
-  font-size:12px;
-}
-
-/* MOBILE */
-
-@media(max-width:650px){
-
-  nav{
-    align-items:flex-start;
-    flex-direction:column;
-  }
-
-  nav .links{
-    gap:12px;
-  }
-
-  .hero{
-    padding:65px 0 55px;
-  }
-
-  section{
-    padding:48px 0;
-  }
-
+:root{--gold:#d7b56d;--gold2:#f4dfaa;--bg:#090909;--panel:#151515;--muted:#b9b3a6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#f8f5ed;font-family:Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1100px,92%);margin:auto}
+header{position:sticky;top:0;background:#090909ed;border-bottom:1px solid #6f592d;z-index:5}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:15px}
+.brand{font-weight:800;letter-spacing:1px;color:var(--gold2)}
+.brand span{display:block;font-size:10px;letter-spacing:3px;color:#aaa}
+nav .links{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:#ddd}
+.hero{padding:0;text-align:left;background:#050505;min-height:560px;display:flex;align-items:center;overflow:hidden;position:relative}
+.hero .wrap{width:min(1180px,94%);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:18px;position:relative;min-height:560px}
+.hero-copy{padding:65px 0;position:relative;z-index:2}
+.eyebrow{font-size:11px;letter-spacing:4px;color:var(--gold)}
+.hero h1{font-family:Georgia,serif;font-size:clamp(54px,8vw,94px);line-height:.92;margin:18px 0 10px;color:#fff}
+.gold{color:var(--gold2)}
+.hero h1 .gold{display:block;color:#e6bd62;font-size:1.12em}
+.role{font-size:clamp(19px,2.5vw,27px);color:#e4bd68}
+.motto{font-size:12px;letter-spacing:3px;color:#c9c1b2;margin:15px 0 24px}
+.btn{display:inline-block;padding:13px 22px;border-radius:4px;background:linear-gradient(135deg,#f1d99b,#b78b3f);color:#16110a;font-weight:800;margin:6px}
+.btn.outline{background:transparent;border:1px solid var(--gold);color:var(--gold2)}
+.hero-photo-wrap{height:100%;min-height:560px;display:flex;align-items:flex-end;justify-content:center;position:relative}
+.hero-photo{height:min(530px,88vw);max-width:100%;width:auto;object-fit:contain;object-position:center bottom;filter:grayscale(100%);mask-image:linear-gradient(to bottom,#000 82%,transparent 100%)}
+.hero-side{position:absolute;right:0;top:50%;transform:translateY(-50%);width:110px;border-left:1px solid #8e713b;padding-left:12px;color:#e6d7b7;font-size:12px;line-height:1.35}
+.hero-side b{display:block;color:#e7bd65;margin-bottom:4px}
+.hero-social{display:flex;gap:10px;margin-top:18px}
+.hero-social a{width:32px;height:32px;border:1px solid #b8954e;border-radius:50%;display:grid;place-items:center;color:#f2d68e}
+section{padding:62px 0}
+.section-title{text-align:center;margin:0 0 30px;font-size:30px}
+.section-title span{color:var(--gold2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:17px}
+.card{background:linear-gradient(145deg,#191919,#101010);border:1px solid #493b22;border-radius:10px;padding:23px}
+.card h3{color:var(--gold2)}
+.muted{color:var(--muted);font-size:14px}
+.price{font-size:22px;color:var(--gold);font-weight:800}
+.tag{display:inline-block;border:1px solid #80683a;color:var(--gold2);font-size:10px;letter-spacing:1px;padding:3px 8px;border-radius:20px}
+.project-card{display:flex;flex-direction:column;align-items:flex-start}
+.project-card p{flex:1}
+.demo{min-height:155px;border:1px dashed #80683a;border-radius:8px;padding:18px;background:#100e0a}
+.steps{counter-reset:step}
+.step{padding:18px;border-left:2px solid var(--gold);background:#141414;margin:12px 0}
+.step b{color:var(--gold2)}
+.contact{text-align:center;background:linear-gradient(180deg,#090909,#1b160d);border-top:1px solid #554321}
+.contact-card{max-width:680px;margin:auto;background:#15130f;border:1px solid #6d552b;padding:28px;border-radius:12px}
+footer{text-align:center;padding:24px;color:#8f887b;border-top:1px solid #29231a;font-size:12px}
+@media(max-width:720px){
+nav{align-items:flex-start;flex-direction:column}
+nav .links{gap:12px}
+.hero .wrap{grid-template-columns:1fr;gap:0;min-height:auto}
+.hero-copy{padding:52px 8px 0}
+.hero-photo-wrap{min-height:330px;height:330px;margin-top:-5px}
+.hero-photo{height:350px;max-width:100%}
+.hero-side{right:2px;top:45%;width:88px;font-size:10px}
+.hero h1{font-size:clamp(52px,15vw,78px)}
+section{padding:48px 0}
 }
 </style>
 </head>
-
 <body>
-
-<!-- HEADER -->
-
-<header>
-<div class="wrap">
-<nav>
-
-<a class="brand" href="#">
-SAKTHI DIGITAL SERVICES
-<span>YOUR DIGITAL PARTNER</span>
-</a>
-
+<header><div class="wrap"><nav>
+<a class="brand" href="#">SAKTHI DIGITAL SERVICES<span>YOUR DIGITAL PARTNER</span></a>
 <div class="links">
-<a href="#services">Services</a>
-<a href="#samples">Demo Work</a>
-<a href="#projects">My Projects</a>
-<a href="#pricing">Pricing</a>
-<a href="#contact">Contact</a>
-</div>
-
-</nav>
-</div>
-</header>
+<a href="#services">Services</a><a href="#samples">Demo Work</a>
+<a href="#projects">Projects</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a>
+</div></nav></div></header>
 
 <main>
+<section class="hero"><div class="wrap">
+<div class="hero-copy">
+<div class="eyebrow">WELCOME TO MY DIGITAL WORLD</div>
+<h1>Sakthivel <span class="gold">V.</span></h1>
+<div class="role">Founder / Developer / CSE Student</div>
+<div class="motto">DREAM • CODE • CREATE • GROW</div>
+<a class="btn" href="https://vsakthivel2882005-collab.github.io/Developer-Portfolio-Website/" target="_blank">View My Portfolio</a>
+<a class="btn outline" href="https://wa.me/919360411193">Contact Me</a>
+<div class="hero-social">
+<a href="https://www.instagram.com/cdm_killer_sakthi_07/">◎</a>
+<a href="https://wa.me/919360411193">◉</a>
+<a href="https://github.com/vsakthivel2882005-collab">⌘</a>
+</div></div>
+<div class="hero-photo-wrap">
+<img class="hero-photo" src="profile-new.jpg" alt="Sakthivel portrait">
+<div class="hero-side">
+<b>B.E. CSE</b>2023 – 2027<br><br>
+<b>Founder</b>Sakthi Digital Services<br><br>
+<b>Projects</b>EMS<br>My Food App<br>Developer Portfolio
+</div></div></div></section>
 
-<!-- HERO -->
-
-<section class="hero">
-<div class="wrap">
-
-<div class="eyebrow">Premium Digital Solutions</div>
-
-<h1>
-Make Your Business
-<span class="gold">Look Professional.</span>
-</h1>
-
-<p>
-Resume design, creative posters, document services
-and website solutions — delivered with care and a premium finish.
-</p>
-
-<a class="btn"
-href="https://wa.me/919360411193?text=Hi%20Sakthi%20Digital%20Services%2C%20I%20need%20your%20service."
-target="_blank" rel="noopener">
-WhatsApp to Order
-</a>
-
-<a class="btn outline" href="#services">
-Explore Services
-</a>
-
-</div>
-</section>
-
-<!-- SERVICES -->
-
-<section id="services">
-<div class="wrap">
-
-<h2 class="section-title">
-Our <span>Services</span>
-</h2>
-
+<section id="services"><div class="wrap">
+<h2 class="section-title">Our <span>Services</span></h2>
 <div class="grid">
+<div class="card"><h3>Resume Creation</h3><p class="muted">Professional resumes.</p><div class="price">₹150</div></div>
+<div class="card"><h3>PDF Editing</h3><p class="muted">PDF editing and conversion.</p><div class="price">₹100 onwards</div></div>
+<div class="card"><h3>Poster Design</h3><p class="muted">Business and social media posters.</p><div class="price">₹200</div></div>
+<div class="card"><h3>Logo Concepts</h3><p class="muted">Starter logo concepts.</p><div class="price">₹250</div></div>
+<div class="card"><h3>Visiting Card</h3><p class="muted">Business card layouts.</p><div class="price">₹150</div></div>
+<div class="card"><h3>Website Portfolio</h3><p class="muted">Portfolio and business websites.</p><div class="price">₹1,000 onwards</div></div>
+<div class="card"><h3>Typing & Formatting</h3><p class="muted">Tamil and English typing.</p><div class="price">₹30 / page</div></div>
+<div class="card"><h3>Online Form Assistance</h3><p class="muted">Form-filling assistance where permitted.</p><div class="price">₹100 onwards</div></div>
+</div></div></section>
 
-<div class="card">
-<h3>Resume Creation</h3>
-<p class="muted">Clean, professional student and job-seeker resumes.</p>
-<div class="price">₹150</div>
-</div>
-
-<div class="card">
-<h3>PDF Editing</h3>
-<p class="muted">PDF editing, merging and conversion assistance.</p>
-<div class="price">₹100 onwards</div>
-</div>
-
-<div class="card">
-<h3>Poster Design</h3>
-<p class="muted">Promotional posters for shops, events and social media.</p>
-<div class="price">₹200</div>
-</div>
-
-<div class="card">
-<h3>Logo Concepts</h3>
-<p class="muted">Starter logo concepts for small businesses.</p>
-<div class="price">₹250</div>
-</div>
-
-<div class="card">
-<h3>Visiting Card</h3>
-<p class="muted">Simple, premium business card layouts.</p>
-<div class="price">₹150</div>
-</div>
-
-<div class="card">
-<h3>Website Portfolio</h3>
-<p class="muted">Basic portfolio and small business website setup.</p>
-<div class="price">₹1,000 onwards</div>
-</div>
-
-<div class="card">
-<h3>Typing & Formatting</h3>
-<p class="muted">Tamil/English typing and document formatting.</p>
-<div class="price">₹30 / page</div>
-</div>
-
-<div class="card">
-<h3>Online Form Assistance</h3>
-<p class="muted">Form-filling guidance and assistance where permitted.</p>
-<div class="price">₹100 onwards</div>
-</div>
-
-</div>
-
-<p class="muted" style="text-align:center;margin-top:18px">
-Prices are indicative. Final price depends on work scope.
-Application fees, printing and other third-party charges are extra.
-</p>
-
-</div>
-</section>
-
-<!-- DEMO WORK -->
-
-<section id="samples">
-<div class="wrap">
-
-<h2 class="section-title">
-Portfolio <span>Showcase</span>
-</h2>
-
+<section id="samples"><div class="wrap">
+<h2 class="section-title">Portfolio <span>Showcase</span></h2>
 <div class="grid">
+<div class="demo"><span class="tag">DEMO SAMPLE</span><h3>Professional Resume</h3><p class="muted">Illustrative resume layout.</p></div>
+<div class="demo"><span class="tag">DEMO CONCEPT</span><h3>Business Promotion Poster</h3><p class="muted">Promotional design concept.</p></div>
+<div class="demo"><span class="tag">DEMO CONCEPT</span><h3>Minimal Gold Logo</h3><p class="muted">Brand identity concept.</p></div>
+</div></div></section>
 
-<div class="demo">
-<span class="tag">DEMO SAMPLE</span>
-<h3>Professional Resume</h3>
-<p class="muted">
-Illustrative resume layout for a fictional candidate.
-Not a paid client project.
-</p>
-</div>
-
-<div class="demo">
-<span class="tag">DEMO CONCEPT</span>
-<h3>Business Promotion Poster</h3>
-<p class="muted">
-Example promotional design concept for a local business.
-</p>
-</div>
-
-<div class="demo">
-<span class="tag">DEMO CONCEPT</span>
-<h3>Minimal Gold Logo</h3>
-<p class="muted">
-Illustrative brand identity concept created for portfolio display.
-</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- MY LIVE PROJECTS -->
-
-<section id="projects">
-<div class="wrap">
-
-<h2 class="section-title">
-My <span>Live Projects</span>
-</h2>
-
+<section id="projects"><div class="wrap">
+<h2 class="section-title">My <span>Live Projects</span></h2>
 <div class="grid">
+<div class="card project-card"><span class="tag">LIVE PROJECT 01</span><h3>Employee Management System</h3><p class="muted">Employee records, attendance and payroll.</p><a class="btn" href="https://vsakthivel2882005-collab.github.io/Employee-Management/" target="_blank">Open EMS</a></div>
+<div class="card project-card"><span class="tag">LIVE PROJECT 02</span><h3>My Food App</h3><p class="muted">Food ordering application.</p><a class="btn" href="https://my-food-app-vsakthi2882006-6468s-projects.vercel.app/" target="_blank">Open My Food App</a></div>
+<div class="card project-card"><span class="tag">LIVE PROJECT 03</span><h3>Developer Portfolio</h3><p class="muted">Personal developer portfolio.</p><a class="btn" href="https://vsakthivel2882005-collab.github.io/Developer-Portfolio-Website/" target="_blank">Open Portfolio</a></div>
+</div></div></section>
 
-<!-- EMS -->
-
-<div class="card project-card">
-
-<span class="tag">LIVE PROJECT 01</span>
-
-<h3>Employee Management System</h3>
-
-<p class="muted">
-HR management platform for employee records,
-attendance, payroll and administration.
-</p>
-
-<a class="btn"
-href="https://vsakthivel2882005-collab.github.io/Employee-Management/"
-target="_blank" rel="noopener">
-Open EMS
-</a>
-
-</div>
-
-<!-- MY FOOD APP -->
-
-<div class="card project-card">
-
-<span class="tag">LIVE PROJECT 02</span>
-
-<h3>My Food App</h3>
-
-<p class="muted">
-Food ordering application project.
-Explore the live application.
-</p>
-
-<a class="btn"
-href="https://my-food-app-vsakthi2882006-6468s-projects.vercel.app"
-target="_blank" rel="noopener">
-Open My Food App
-</a>
-
-</div>
-
-<!-- DEVELOPER PORTFOLIO -->
-
-<div class="card project-card">
-
-<span class="tag">LIVE PROJECT 03</span>
-
-<h3>Developer Portfolio</h3>
-
-<p class="muted">
-Personal developer portfolio showcasing
-projects, skills and profile.
-</p>
-
-<a class="btn"
-href="https://vsakthivel2882005-collab.github.io/Developer-Portfolio-Website/"
-target="_blank" rel="noopener">
-Open Portfolio
-</a>
-
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- ORDER PROCESS -->
-
-<section id="pricing">
-<div class="wrap">
-
-<h2 class="section-title">
-Simple <span>Order Process</span>
-</h2>
-
+<section id="pricing"><div class="wrap">
+<h2 class="section-title">Simple <span>Order Process</span></h2>
 <div class="steps">
+<div class="step"><b>01 — Share your requirement</b><div class="muted">Send details through WhatsApp.</div></div>
+<div class="step"><b>02 — Confirm price and deadline</b><div class="muted">Confirm scope and delivery time.</div></div>
+<div class="step"><b>03 — Review the draft</b><div class="muted">Check the draft and agreed revisions.</div></div>
+<div class="step"><b>04 — Receive final files</b><div class="muted">Receive completed files after payment.</div></div>
+</div></div></section>
 
-<div class="step">
-<b>01 — Share your requirement</b>
-<div class="muted">
-Send details and reference files through WhatsApp.
-</div>
-</div>
-
-<div class="step">
-<b>02 — Confirm price and deadline</b>
-<div class="muted">
-We confirm the scope, delivery time and any advance before starting.
-</div>
-</div>
-
-<div class="step">
-<b>03 — Review the draft</b>
-<div class="muted">
-Check the draft and request the agreed revisions.
-</div>
-</div>
-
-<div class="step">
-<b>04 — Receive final files</b>
-<div class="muted">
-Get your completed files after payment settlement.
-</div>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-<div class="wrap">
-
-<h2 class="section-title">
-Let's Work <span>Together</span>
-</h2>
-
+<section class="contact" id="contact"><div class="wrap">
+<h2 class="section-title">Let's Work <span>Together</span></h2>
 <div class="contact-card">
-
-<p class="muted">
-For orders and enquiries, contact Sakthi Digital Services.
-</p>
-
-<p>
-<b>WhatsApp:</b>
-<a class="gold" href="https://wa.me/919360411193">
-+91 93604 11193
-</a>
-</p>
-
-<p>
-<b>Instagram:</b>
-<a class="gold"
-href="https://www.instagram.com/cdm_killer_sakthi_07/"
-target="_blank" rel="noopener">
-@cdm_killer_sakthi_07
-</a>
-</p>
-
-<p>
-<b>Location:</b> Chidambaram, Tamil Nadu
-</p>
-
-<a class="btn"
-href="https://wa.me/919360411193?text=Hi%2C%20I%20want%20to%20place%20an%20order."
-target="_blank" rel="noopener">
-Chat on WhatsApp
-</a>
-
-<a class="btn outline"
-href="https://www.instagram.com/cdm_killer_sakthi_07/"
-target="_blank" rel="noopener">
-Visit Instagram
-</a>
-
-</div>
-</div>
-</section>
-
+<p class="muted">For orders and enquiries, contact Sakthi Digital Services.</p>
+<p><b>WhatsApp:</b> <a class="gold" href="https://wa.me/919360411193">+91 93604 11193</a></p>
+<p><b>Instagram:</b> <a class="gold" href="https://www.instagram.com/cdm_killer_sakthi_07/">@cdm_killer_sakthi_07</a></p>
+<a class="btn" href="https://wa.me/919360411193">Chat on WhatsApp</a>
+</div></div></section>
 </main>
-
-<!-- FOOTER -->
-
-<footer>
-© 2026 Sakthi Digital Services. All rights reserved.
-<br>
-Demo portfolio samples are illustrative concepts,
-not claims of completed client work.
-</footer>
-
+<footer>© 2026 Sakthi Digital Services. All rights reserved.</footer>
 </body>
-  </html>
-  
+</html>
